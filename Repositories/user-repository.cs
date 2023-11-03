@@ -11,7 +11,7 @@ public interface IUserRepository {
 
 namespace tl2_tp09_2023_InakiPoch.Repositories {
     public class UserRepository : IUserRepository {
-        readonly string connectionPath = "Data Soruce=DB/board.db;Cache=Shared";
+        readonly string connectionPath = "Data Source=DataBase/board.db;Cache=Shared";
 
         public void Add(User user) {
             string queryText = "INSERT INTO user (id, username) VALUES (@id, @username)";
