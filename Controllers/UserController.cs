@@ -30,12 +30,12 @@ public class UserController : ControllerBase {
     [HttpPut("Update")]
     public ActionResult Update(int id, User user) {
         userRepository.Update(id, user);
-        return Ok();
+        return Ok("Usuario actualizado con exito");
     }
 
     [HttpDelete("Delete")]
     public ActionResult Delete(int id) {
         userRepository.Delete(id);
-        return Ok();
+        return Ok("Usuario borrado con exito");
     }
 }
