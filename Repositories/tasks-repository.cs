@@ -79,7 +79,7 @@ namespace tl2_tp09_2023_InakiPoch.Repositories {
         }
 
         public List<Tasks> GetByUser(int userId) {
-            string queryText = "SELECT * FROM task t INNER JOIN user u ON t.assigned_user_id = @id";
+            string queryText = "SELECT * FROM task WHERE assigned_user_id = @id";
             List<Tasks> tasks = new List<Tasks>();
             using(SQLiteConnection connection = new SQLiteConnection(connectionPath)) {
                 SQLiteCommand query = new SQLiteCommand(queryText, connection);
@@ -105,7 +105,7 @@ namespace tl2_tp09_2023_InakiPoch.Repositories {
         }
 
         public List<Tasks> GetByBoard(int boardId) {
-            string queryText = "SELECT * FROM task t INNER JOIN board b ON t.board_id = @id";
+            string queryText = "SELECT * FROM task WHERE board_id = @id";
             List<Tasks> tasks = new List<Tasks>();
             using(SQLiteConnection connection = new SQLiteConnection(connectionPath)) {
                 SQLiteCommand query = new SQLiteCommand(queryText, connection);
