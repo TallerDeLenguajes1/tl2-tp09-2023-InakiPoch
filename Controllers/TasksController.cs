@@ -25,9 +25,9 @@ public class TasksController : ControllerBase {
     public ActionResult<List<Tasks>> GetByBoard(int boardId) => Ok(tasksRepository.GetByBoard(boardId));
 
     [HttpPost("Add")]
-    public ActionResult Add(int boardId, Tasks Tasks) {
-        tasksRepository.Add(boardId, Tasks);
-        return Ok("Usuario agregado");
+    public ActionResult Add(int boardId, Tasks tasks) {
+        tasksRepository.Add(boardId, tasks);
+        return Ok("Tarea agregada");
     }
 
     [HttpPut("AssignTask")]
